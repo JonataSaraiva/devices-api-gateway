@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "4901b9af-a648-4c85-87db-8f56b6a33f2c",
+		"name": "Iot-devices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2009589"
+	},
+	"item": [
+		{
+			"name": "Send metric",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": {{name}},\n    \"group\": {{group}},\n    \"timestamp\": \"2018-01-13T17:09:42.411+00:00\",\n    \"value\": {{value}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4566/restapis/jdwq36g0sq/local/_user_request_/metric",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"restapis",
+						"jdwq36g0sq",
+						"local",
+						"_user_request_",
+						"metric"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Metrics",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "1234567",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9091/devices?name=smartwatch&startDate=2017-01-13T16:09:42.411&endDate=2017-01-13T19:09:42.411",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"devices"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "smartwatch"
+						},
+						{
+							"key": "startDate",
+							"value": "2017-01-13T16:09:42.411"
+						},
+						{
+							"key": "endDate",
+							"value": "2017-01-13T19:09:42.411"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
